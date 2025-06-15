@@ -102,6 +102,7 @@ body{
 
 .home .container-foto .foto{
     max-width: 420px;
+    max-high: 420px;
     border-radius: 50%;
 }
 
