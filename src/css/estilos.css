@@ -102,12 +102,12 @@ body{
 
 .home .container-foto .foto{
     max-width: 420px;
-    max-high: 220px;
     border-radius: 50%;
 }
 
 .home .container-foto img{
     width: 100%;
+    hihg: 100%;
     border-radius: 50%;
 }
 
