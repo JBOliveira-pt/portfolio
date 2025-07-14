@@ -8,7 +8,7 @@ body{
     background-size: 120% 120%;
     font-family: "Poppins", sans-serif;
     margin: 0 auto;
-    max-width: 1120px;
+    max-width: 1420px;
 }
 
 .cabecalho{
@@ -23,7 +23,7 @@ body{
     height: 85px;
     border-radius: 50%;
     text-align: center;
-    line-height: 75px;
+    line-height: 85px;
     font-family: "Raleway", sans-serif;
     transition: 0.4s;   
 }
@@ -60,9 +60,9 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     padding: 0 15px;
-    max-width: 50%;
+    max-width: 60%;
 }
 
 .home .informacoes h1{
@@ -102,21 +102,48 @@ body{
 
 .home .container-foto .foto{
     max-width: 420px;
-    border-radius: 50%;
+    
+}
+
+.home .container-foto {
+    /* Ajuste de perspectiva para dar um efeito visual mais interessante */
+    perspective: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     clip-path: polygon(
+        0% 0%,    /* topo esquerdo*/
+        60% 0%,   /* topo direito */
+        85% 100%,  /* base direita */
+        25% 100%     /* base esquerda */ 
+    );
+    transition: 2s ease-in-out;
 }
 
 .home .container-foto img{
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     display: block;
-    border-radius: 50%;
+    clip-path: polygon(
+        0% 0%,    /* topo esquerdo*/
+        55% 0%,   /* topo direito */
+        100% 100%,  /* base direita */
+        25% 100%     /* base esquerda */
+    );
 }
 
 .home .foto.sombra-interna{
     background: linear-gradient(to right, #515252, #8B8C8C, #fff);
     background-size: 180% 180%;
-    animation: gradient-animation 8s ease infinite;
+    animation: gradient-animation 6s ease infinite;
 }
+
+
+.home .container-foto:hover {
+    transform: scale(1.1);
+    transition: 2s ease-in-out;
+}
+
 
 .projetos{
     padding: 70px 0 70px;
@@ -210,4 +237,8 @@ body{
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
+}
+
+.informacoes p.oculto {
+    display: none;
 }
