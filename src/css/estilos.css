@@ -2,7 +2,6 @@ html{
     color: #fff;
     scroll-behavior: smooth;
 }
-
 body{
     background: linear-gradient(150deg, #000, #8B8C8C);
     background-size: 120% 120%;
@@ -11,13 +10,25 @@ body{
     max-width: 1420px;
 }
 
+/*CABEÇALHO*/
+.hamburger {
+    display: none;
+  }
 .cabecalho{
-    display: flex;
+    display: flex !important;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 15px;    
+    position: fixed;
+    top: 10px;
+    left: 245px;
+    width: 80%;
+    background-color:#1515152a;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.619);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.763);    
 }
-
 .cabecalho .logo{
     width: 85px;
     height: 85px;
@@ -25,22 +36,23 @@ body{
     text-align: center;
     line-height: 85px;
     font-family: "Raleway", sans-serif;
-    transition: 0.4s;   
+    transition: 0.4s;
+    padding-left: 15px;   
 }
-
 .cabecalho a:hover .logo{
     color: #8B8C8C;
-    text-decoration: underline;
     transition: 0.4s; 
 }
-
+.cabecalho .menu ul{    
+    display: flex;
+    flex-direction:row;
+}
 .cabecalho .menu li a{
     font-size: 20px;
     text-transform: capitalize;
     padding: 10px 20px;
     transition: 0.4s;
 }
-
 .cabecalho .menu li a:hover{
     background-color: #515252;
     color: #fff;
@@ -48,14 +60,15 @@ body{
     text-decoration: underline;
 }
 
+/*INFORMAÇÕES*/
 .home{
+    padding-top: 110px;
     display: flex;
     min-height: calc(100vh - 125px);
     align-items: center;
     gap: 50px;
     justify-content: space-between;
 }
-
 .home .informacoes{
     display: flex;
     flex-direction: column;
@@ -64,25 +77,22 @@ body{
     padding: 0 15px;
     max-width: 60%;
 }
-
 .home .informacoes h1{
     font-family: "Raleway", sans-serif;
     font-size: 45px;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.763);   
 }
-
 .home .informacoes .p{
     font-family: "Raleway", sans-serif;
     font-size: 24px;
     margin-bottom: 10px;
 }
-
 .home .redes-sociais{
     display: flex;
     gap: 20px;
     margin-top: 20px;
 }
-
 .home .redes-sociais a i{
     border: 1px solid #fff;
     border-radius: 50%;
@@ -93,20 +103,15 @@ body{
     font-size: 30px;
     transition: 0.4s;
 }
-
 .home .redes-sociais a i:hover{
     color: #8B8C8C;
     border: 1px solid #8B8C8C;
     transform:  scale(1.1);
 }
-
 .home .container-foto .foto{
-    max-width: 420px;
-    
+    max-width: 420px; 
 }
-
 .home .container-foto {
-    /* Ajuste de perspectiva para dar um efeito visual mais interessante */
     perspective: 700px;
     display: flex;
     align-items: center;
@@ -119,7 +124,6 @@ body{
     );
     transition: 2s ease-in-out;
 }
-
 .home .container-foto img{
     width: 90%;
     height: 90%;
@@ -131,55 +135,171 @@ body{
         25% 100%     /* base esquerda */
     );
 }
-
 .home .foto.sombra-interna{
     background: linear-gradient(to right, #515252, #8B8C8C, #fff);
     background-size: 180% 180%;
     animation: gradient-animation 6s ease infinite;
 }
-
-
 .home .container-foto:hover {
     transform: scale(1.1);
     transition: 2s ease-in-out;
 }
 
-
-.projetos{
-    padding: 70px 0 70px;
+/*TECNOLOGIAS*/
+.technologies-group{
+    padding-top: 110px;
+    display: flex;
+    flex-direction:column;
+    margin-top: 60px;
+    margin-bottom: 0px;
 }
-
-.projetos .titulo{
-    text-align: center;
-    padding: 60px 0px;
-    font-size:  45px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.projetos .container-projetos{
+.technologies{
     display: flex;
     gap: 20px;
+    flex-direction:row;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+.technology-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.technologies img{
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    padding: 18px;
+    transition: transform 0.3s;
+    z-index: 1;
+}
+.technologies-title{
+    font-family: "Raleway", sans-serif;
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.763);   
+}
+.technologies img:hover {
+    transform: scale(1.25);
+    transition: 0,8s ease-in-out;
+}
+.technologies-label {
+    opacity: 0;
+    background: rgba(30, 30, 30, 0.85);
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px); 
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.5s;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-weight: 400;
+}
+.technology-item:hover .technologies-label,
+.technology-item:focus .technologies-label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0px);
+}
+
+/*CERTIFICADOS*/
+.certifications-group{
+    padding-top: 110px;
+    display: flex;
+    flex-direction:column;
+    margin-bottom: 0px;
+    align-items: center;
+}
+.certifications-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.certifications-item {
+    position: relative;
+    object-fit: contain;
+    padding: 18px;
+    transition: transform 0.3s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.certifications-label{
+    opacity: 0;
+    background: rgba(30, 30, 30, 0.85);
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px); 
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.5s;
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-weight: 400;
+}
+.certifications-item:hover .certifications-label,
+.certifications-item:focus .certifications-label {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0px);
+}
+.certifications img{
+    width: 400px;
+    height: 250px;
+    object-fit: contain;
+    padding: 18px;
+    transition: transform 0.3s;
+    z-index: 1;
+}
+.certifications img:hover {
+    transform: scale(1.2);
+}
+
+/*PROJETOS*/
+.projetos{
+    padding-top: 110px;
+}
+.titulo{
+    padding-bottom: 50px;
+    font-family: "Raleway", sans-serif;
+    font-size: 45px;
+    margin-bottom: 0px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.763);   
+}
+.projetos .container-projetos{
+    display: flex;
     flex-wrap: wrap;
     margin-bottom: 20px;
     justify-content: center;
 }
-
 .projetos .projeto{
     max-width: 260px;
     max-height: 500px;
     position: relative;
     display: none;
 }
-
 .projetos .projeto.ativo{
     display: block;
 }
-
 .projetos .projeto img{
     height: 100%;
 }
-
 .projetos .projeto h3{
     background-color: #040203;
     width: 100%;
@@ -190,7 +310,6 @@ body{
     bottom: 0;
     font-size: 12px;
 }
-
 .projetos .projeto .informacoes-projeto{
     background-color: #040203;
     position: absolute;
@@ -200,14 +319,15 @@ body{
     font-weight: 600;
     opacity: 0;
     transition: 0.5s;
-    padding: 20px;
+    text-align: center;
+    display: flex;                 
+    justify-content: center;       
+    align-items: center; 
 }
-
 .projetos .container-projetos .projeto:hover .informacoes-projeto{
     opacity: 0.7;
     background-color: #000;
 }
-
 .projetos .btn-mostrar-projetos{
     background: none;
     border: 1px solid #fff;
@@ -223,22 +343,29 @@ body{
     align-items: center;
     cursor: pointer;
 }
-
 .projetos .btn-mostrar-projetos:hover{
     background-color: #151515;
     transition: 0.8s;
 }
-
 .projetos.btn-mostrar-projetos.remover{
     display: none;
 }
-
 @keyframes gradient-animation {
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}
 }
-
 .informacoes p.oculto {
     display: none;
+}
+
+/*RODAPÉ*/
+.footer{
+    margin-top: 80px;
+    text-align: center;
+    padding: 50px;
+    font-size: 17px;
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    letter-spacing:0.05cm;
 }
