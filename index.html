@@ -5,19 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JBOliveira</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/css/reset.css">
-    <link rel="stylesheet" href="./src/css/estilos.css">
+    <link rel="stylesheet" href="./src/css/estilo.css">
     <link rel="stylesheet" href="./src/css/responsivo.css">
 </head>
 
@@ -27,16 +21,31 @@
         <a href="#">
             <h1 class="logo">JBOliveira</h1>
         </a>
-        <nav class="menu">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" id="menu">
             <ul>
                 <li>
-                    <a href="#projetos">My Projetcs</a>
+                    <a href="#aboutme">About me</a>
+                </li>
+                <li>
+                    <a href="#technologies">Tools & Techs</a>
+                </li>
+                <li>
+                    <a href="#certifications">Certifications</a>
+                </li>
+                <li>
+                    <a href="#projetos">Projetcs</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <section class="home">
+    <section class="home" id="aboutme">
         <div class="informacoes">
             <h1>Jeison Bainha de Oliveira</h1>
             <p><strong>Java Developer | Digital Architect</strong></p>
@@ -48,25 +57,25 @@
             <p>Feel free to reach out and get in touch:</p>
             <ul class="redes-sociais">
                 <li>
-                    <a href="https://www.linkedin.com/in/jboliveira-pt/" title="Ir para o LikedIn" target="_blank">
+                    <a href="https://www.linkedin.com/in/jboliveira-pt/">
                         <i class="fab fa-linkedin-in">
                         </i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://wa.me/351912306392" title="Enviar Mensagem no WhatsApp">
+                    <a href="https://wa.me/351912306392">
                         <i class="fab fa-whatsapp">
                         </i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/jboliveira.pt/" title="Ir para o Instagram">
+                    <a href="https://www.instagram.com/jboliveira.pt/">
                         <i class="fab fa-instagram">
                         </i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/JBOliveira-pt" title="Ir para o GitHub">
+                    <a href="https://github.com/JBOliveira-pt">
                         <i class="fab fa-github">
                         </i>
                     </a>
@@ -79,6 +88,108 @@
             </div>
         </div>
     </section>
+ 
+<section class="technologies-group" id="technologies">
+    <h1 class="technologies-title">Tools & Techs</h1>
+    <section class="technologies" id="technologies">
+        <ul>
+                <li class="technology-item">
+                    <img src="src/imagens/java-img.png" alt="java">
+                    <span class="technologies-label">Java</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/mysql-img.png" alt="mysql">
+                    <span class="technologies-label">MySQL</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/asana-img.png" alt="asana">
+                    <span class="technologies-label">Asana</span>
+                </li>
+            </ul>
+            <ul>
+                <li class="technology-item">
+                    <img src="src/imagens/intellij-img.png" alt="intellij">
+                    <span class="technologies-label">IntelliJ</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/html-img.png" alt="html">
+                    <span class="technologies-label">HTML</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/jira-img.png" alt="jira">
+                    <span class="technologies-label">Jira</span>
+                </li>
+            </ul>
+            <ul>
+                <li class="technology-item">
+                    <img src="src/imagens/springboot-img.png" alt="springboot">
+                    <span class="technologies-label">Spring Boot</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/css-img.png" alt="css">
+                    <span class="technologies-label">CSS</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/azuredevops-img.png" alt="azuredevops">
+                    <span class="technologies-label">Azure DevOps</span>
+                </li>
+            </ul>
+            <ul>
+                <li class="technology-item">
+                    <img src="src/imagens/vscode-img.png" alt="vscode">
+                    <span class="technologies-label">VS Code</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/js-img.png" alt="javascript">
+                    <span class="technologies-label">JavaScript</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/office-img.png" alt="office">
+                    <span class="technologies-label">Microsoft Office</span>
+                </li>
+            </ul>
+            <ul>
+                <li class="technology-item">
+                    <img src="src/imagens/mulesoft-img.png" alt="mulesoft">
+                    <span class="technologies-label">MuleSoft</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/canva-img.png" alt="canva">
+                    <span class="technologies-label">Canva</span>
+                </li>
+            </ul>
+            <ul>
+                <li class="technology-item">
+                    <img src="src/imagens/anypointstudio-img.png" alt="anypointstudio">
+                    <span class="technologies-label">Anypoint Studio</span>
+                </li>
+                <li class="technology-item">
+                    <img src="src/imagens/figma-img.png" alt="figma">
+                    <span class="technologies-label">Figma</span>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+<section class="certifications-group" id="certifications">
+    <h1 class="technologies-title">Certifications</h1>
+    <section class="certifications" id="certifications">    
+        <ul class="certifications-list">
+            <li class="certifications-item">
+                <img src="src/imagens/iscte-img.png" alt="digitalleader">
+                <span class="certifications-label">Java Programming</span>
+            </li>
+            <li class="certifications-item">
+                <img src="src/imagens/az900-img.png" alt="az-900">
+                <span class="certifications-label">Azure Fundamentals</span>
+            </li>
+            <li class="certifications-item">
+                <img src="src/imagens/digitalleader-img.png" alt="digitalleader">
+                <span class="certifications-label">Google Digital Leader</span>
+            </li>
+        </ul>
+    </section>
+</section>
 
     <section class="projetos" id="projetos">
         <h2 class="titulo">Projetcs</h2>
@@ -97,6 +208,10 @@
     </section>
 
     <script src="./src/js/index.js"></script>
+
+    <footer class="footer">
+      <p>&copy; 2025 Developed by <strong>Jeison Oliveira</strong></p>
+    </footer>
 
 </body>
 
