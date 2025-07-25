@@ -1,52 +1,155 @@
 @media(max-width: 1279px) {
     
+    /*CABEÇALHO*/
     .cabecalho {
         padding: 30px;
     }
 
+    /*INFORMAÇÕES*/
     .home {
         flex-direction: column;
         align-items: center;
         margin: 50px 0;
         gap: 30px;
     }    
-
     .home .informacoes {
         max-width: 100%;
         text-align: center;
         align-items: center;      
     }
-
+    
+    /*PROJETOS*/
     .projetos .container-projetos {
         padding: 0 30px;
     }
 
 }
 
-@media(max-width: 425px) {
+@media(max-width: 900px) {
+    
+    /*CABEÇALHO*/
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        z-index: 1100;
+        cursor: pointer;
+        position: relative;
+    }
+    .hamburger span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: #fff;
+        border-radius: 2px;
+    }
+    .cabecalho .menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        left: 0;
+        background: #151515f2;
+        border-radius: 20px;
+        text-align: right;
+        z-index: 1001;
+        padding: 20px 0;
+        margin-left: 215px;
+    }
+    .cabecalho .menu.active {
+        display: block;
+    }
     .cabecalho {
-        font-size: 12px;
-    }    
+        left: 0;
+        width: 100%;
+        border-radius: 0 0 20px 20px;
+        padding: 10px;
+    }
+    .cabecalho .menu ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+  
+    /*INFORMAÇÕES*/
     .home .informacoes h1{
         font-size: 30px;
     }
-
     .home .informacoes p{
         font-size: 16px;
         text-align: justify;
         padding-left: 15px;
         padding-right: 15px;
     }
-
     .home .container-foto img {
-        max-width: 320px;
+        max-width: 220px;
     }
-
     .home .container-foto {
         margin-left: 50px;
+        margin-top: 20px;
     }
 
+/*TECNOLOGIAS*/
+    .technologies-group {
+        padding-top: 0px;
+    }    
+    .technologies {
+        flex-direction: row;
+        align-items:flex-start;
+        gap: 10px;
+    }
+    .technologies ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+    .technology-item img {
+        margin-top: 20px;
+        width: 50px;
+        height: 50px;
+        padding: 2px;
+    }
+    .technologies-label {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+
+/*CERTIFICADOS*/
+    .certifications-group{
+        padding-top: 30px;
+    }
+    .certifications-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .certifications-item {
+        padding: 8px;
+        width: 100%;
+        max-width: 320px;
+    }
+    .certifications-item img {
+        width: 50vw;      
+        max-width: 300px; 
+        height: auto;
+        padding: 4px;
+    }
+    .certifications-label {
+        font-size: 0.9rem;
+        padding: 4px 10px;
+        top: 90%;
+    }
+/*PROJETOS*/
     .projetos {
         padding: 30px;
+    }
+
+/*RODAPÉ*/
+    .footer{
+        margin-top: 0px;
     }
 }
