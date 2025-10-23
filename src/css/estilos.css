@@ -287,9 +287,10 @@ body{
     flex-wrap: wrap;
     margin-bottom: 20px;
     justify-content: center;
+    gap: 30px;
 }
 .projetos .projeto{
-    max-width: 260px;
+    max-width: 300px;
     max-height: 500px;
     position: relative;
     display: none;
@@ -369,3 +370,4 @@ body{
     font-family: "Raleway", sans-serif;
     letter-spacing:0.05cm;
 }
+
