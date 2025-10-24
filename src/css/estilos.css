@@ -339,7 +339,7 @@ body{
     font-size: 18px;
     font-weight: 600;
     margin: 0 auto;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     cursor: pointer;
@@ -370,4 +370,5 @@ body{
     font-family: "Raleway", sans-serif;
     letter-spacing:0.05cm;
 }
+
 
