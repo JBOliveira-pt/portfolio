@@ -45,15 +45,6 @@ Feel free to connect — I’m always open to interesting opportunities and coll
 ## Selected Projects  
 - **S.Inc’s MVP** – Java-based software MVP. [Live Demo →](https://jboliveira-pt.github.io/sinc/)  
 - **Psi Aline Lima’s Instagram Repository** – Portfolio / social-automation project. [Repo →](https://jboliveira-pt.github.io/psialinelima/)  
-*(More projects available on my portfolio site.)*
-
----
-
-## Contact  
-**LinkedIn:** [linkedin.com/in/your-profile](#)  
-**WhatsApp:** [wa.me/your-number](#)  
-**Instagram:** [instagram.com/your-handle](#)  
-**GitHub:** [github.com/jboliveira-pt](https://github.com/jboliveira-pt)  
 
 ---
 
