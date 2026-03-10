@@ -1,38 +1,389 @@
-const botaoMostrarProjetos = document.querySelector(".btn-mostrar-projetos");
-const projetosInativos = document.querySelectorAll(".projeto:not(.ativo)");
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-botaoMostrarProjetos.addEventListener("click", () => {
-    mostrarMaisProjetos();
-    esconderBotao();
-});
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBOliveira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/estilos.css">
+    <link rel="stylesheet" href="./src/css/responsivo.css">
+</head>
 
-function esconderBotao() {
-    botaoMostrarProjetos.classList.add("remover");
-}
+<body>
 
-function mostrarMaisProjetos() {
-    projetosInativos.forEach((projetoInativo) => {
-        projetoInativo.classList.add("ativo");
-    });
-}
+    <header class="cabecalho">
+        <a href="#">
+            <h1 class="logo">JBOliveira</h1>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="menu" id="menu">
+            <ul>
+                <li>
+                    <a href="#aboutme">About me</a>
+                </li>
+                <li>
+                    <a href="#technologies">Techs & Tools</a>
+                </li>
+                <li>
+                    <a href="#certifications">Certifications</a>
+                </li>
+                <li>
+                    <a href="#projetos">Projetcs</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
+    <section class="home" id="aboutme">
+        <div class="informacoes">
+            <h1>Jeison Bainha de Oliveira</h1>
+            <p><strong>Java</strong> | <strong>Full Stack Developer</strong></p>
+            <br>
+            <p>Portuguese-Brazilian IT professional based in Portugal, currently transitioning into software development
+                after nearly a decade working as a lawyer leading the regulatory area of the oil & gas sector.</p>
+            <p>My analytical background in exact sciences—developed during my time in the Brazilian Navy, through
+                Mechanical Engineering studies, and years teaching physics and calculus—shaped a structured and
+                objective approach to problem solving that I now apply to software engineering.</p>
+            <p>I am currently attending the <strong>Software Developer program at CESAE-Digital</strong>, a training
+                path oriented toward the job market with a strong focus on <strong>Java programming</strong> and
+                <strong>Object-Oriented Programming (OOP)</strong>, as well as modern <strong>Web Development</strong>.
+                The program also covers technologies such as <strong>JavaScript</strong>, <strong>React</strong>,
+                <strong>Next.js</strong>, and mobile development concepts using <strong>Swift</strong> and
+                <strong>Kotlin</strong>.
+            </p>
+            <p>Alongside the course, I have been actively building <strong>full-stack, cloud-ready web
+                    applications</strong>, working with <strong>React</strong>, <strong>Next.js</strong>, and
+                <strong>Neon</strong> (serverless database).
+            </p>
+            <p>Previously, I deepened my technical expertise through specialized training at the University Institute of
+                Lisbon – <strong>ISCTE</strong>, where I obtained a <strong>Java programming certification</strong>.
+                During that period, I developed a <strong>Personal Finance Management System</strong> using
+                <strong>Java</strong> and <strong>Object-Oriented Programming</strong> in <strong>IntelliJ</strong>,
+                built a robust <strong>information system using MySQL</strong>, and authored a technical report
+                accompanied by a <strong>Spring Boot</strong> application, coordinated through <strong>Jira</strong> and
+                designed using <strong>Figma</strong>.
+            </p>
+            <p>My most recent professional experience includes supporting data migration projects through the
+                <strong>Anypoint Platform (MuleSoft)</strong> and collaborating within <strong>Agile</strong> teams
+                using <strong>Azure DevOps</strong>.
+            </p>
+            <p>I also hold certifications from Microsoft (<strong>Azure Fundamentals</strong>) and Google (<strong>Cloud
+                    Digital Leader</strong>), reinforcing my commitment to staying at the forefront of <strong>cloud
+                    technologies</strong> and modern software development.</p>
+            <p>Feel free to reach out and get in touch:</p>
 
-hamburger.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
+            <ul class="redes-sociais">
+                <li>
+                    <a href="https://www.linkedin.com/in/jboliveira-pt/">
+                        <i class="fab fa-linkedin-in">
+                        </i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/351912306392">
+                        <i class="fab fa-whatsapp">
+                        </i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/jboliveira.pt/">
+                        <i class="fab fa-instagram">
+                        </i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/JBOliveira-pt">
+                        <i class="fab fa-github">
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-foto">
+            <div class="foto sombra-interna">
+                <img src="./src/imagens/foto.nttdata.png" alt="foto do portfólio do Jeison">
+            </div>
+        </div>
+    </section>
 
-// Fecha o menu ao clicar em um link
-menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-        menu.classList.remove("active");
-    });
-});
+    <section class="technologies-group" id="technologies">
+        <h1 class="technologies-title">Techs & Tools</h1>
 
-// Fecha o menu ao rolar a página
-window.addEventListener("scroll", () => {
-    if (menu.classList.contains("active")) {
-        menu.classList.remove("active");
-    }
-});
+        <section class="technologies">
+
+            <!-- Languages -->
+            <ul>
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                    <span class="technologies-label">Java</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript">
+                    <span class="technologies-label">JavaScript</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                    <span class="technologies-label">Swift</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+                        alt="Kotlin">
+                    <span class="technologies-label">Kotlin</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg" alt="Vercel">
+                    <span class="technologies-label">Vercel</span>
+                </li>
+
+            </ul>
+
+            <!-- Frontend -->
+            <ul>
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                    <span class="technologies-label">HTML</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                    <span class="technologies-label">CSS</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                    <span class="technologies-label">React</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                        alt="Next.js">
+                    <span class="technologies-label">Next.js</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                        alt="Tailwind CSS">
+                    <span class="technologies-label">Tailwind</span>
+                </li>
+
+            </ul>
+
+            <!-- Backend -->
+            <ul>
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
+                        alt="Spring Boot">
+                    <span class="technologies-label">Spring Boot</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.brandfetch.io/idA6cDxrkg/theme/dark/symbol.svg" alt="MuleSoft">
+                    <span class="technologies-label">MuleSoft</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="src/imagens/anypointstudio-img.png" alt="Anypoint Studio">
+                    <span class="technologies-label">Anypoint Studio</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg"
+                        alt="Azure DevOps">
+                    <span class="technologies-label">Azure DevOps</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.simpleicons.org/clerk" alt="Clerk">
+                    <span class="technologies-label">Clerk Auth</span>
+                </li>
+
+            </ul>
+
+            <!-- Databases -->
+            <ul>
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                    <span class="technologies-label">MySQL</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                        alt="MongoDB">
+                    <span class="technologies-label">MongoDB</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                        alt="sql server">
+                    <span class="technologies-label">SQL Server</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.brandfetch.io/idEix_YF2n/w/512/h/512/theme/dark/logo.png" alt="Neon Database">
+                    <span class="technologies-label">Neon DB</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Microsoft Office">
+                    <span class="technologies-label">Microsoft Office</span>
+                </li>
+
+
+            </ul>
+
+            <!-- Developer Tools -->
+            <ul>
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"
+                        alt="IntelliJ">
+                    <span class="technologies-label">IntelliJ</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                        alt="VS Code">
+                    <span class="technologies-label">VS Code</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    <span class="technologies-label">Git</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                        alt="Postman">
+                    <span class="technologies-label">Postman</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netbeans/netbeans-original.svg"
+                        alt="apache netbeans">
+                    <span class="technologies-label">Apache NetBeans</span>
+                </li>
+
+            </ul>
+
+            <!-- Project & Design Tools -->
+            <ul>
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira">
+                    <span class="technologies-label">Jira</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="src/imagens/asana-logo.svg" alt="Asana">
+                    <span class="technologies-label">Asana</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                    <span class="technologies-label">Figma</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://static.vecteezy.com/system/resources/previews/032/329/175/non_2x/canva-icon-logo-symbol-free-png.png"
+                        alt="Canva">
+                    <span class="technologies-label">Canva</span>
+                </li>
+
+                <li class="technology-item">
+                    <img src="https://cdn.simpleicons.org/cloudflare/F38020" alt="Cloudflare">
+                    <span class="technologies-label">Cloudflare</span>
+                </li>
+
+            </ul>
+        </section>
+    </section>
+
+    <section class="certifications-group" id="certifications">
+        <h1 class="technologies-title">Certifications</h1>
+        <section class="certifications" id="certifications">
+            <ul class="certifications-list">
+                <li class="certifications-item">
+                    <img src="src/imagens/iscte-img.png" alt="digitalleader">
+                    <span class="certifications-label">Java Programming</span>
+                </li>
+                <li class="certifications-item">
+                    <img src="src/imagens/az900-img.png" alt="az-900">
+                    <span class="certifications-label">Azure Fundamentals</span>
+                </li>
+                <li class="certifications-item">
+                    <img src="src/imagens/digitalleader-img.png" alt="digitalleader">
+                    <span class="certifications-label">Google Digital Leader</span>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <section class="projetos" id="projetos">
+        <h2 class="titulo">Projetcs</h2>
+        <div class="container-projetos">
+
+            <div class="projeto ativo">
+                <a href="https://primeflow-landing.vercel.app/" target="_blank">
+                    <img src="./src/imagens/PrimeFLOW_Screen.png" alt="PrimeFLOW">
+                    <h3>https://primeflow-landing.vercel.app/</h3>
+                    <div class="informacoes-projeto">
+                        <p>PrimeFLOW</p>
+                    </div>
+                </a>
+            </div>
+            <div class="projeto ativo">
+                <a href="https://jboliveira-pt.github.io/sinc/" target="_blank">
+                    <img src="./src/imagens/S.Inc-Demo_Screen.png" alt="S.Inc MVP">
+                    <h3>https://jboliveira-pt.github.io/sinc/</h3>
+                    <div class="informacoes-projeto">
+                        <p>S.Inc's MVP</p>
+                    </div>
+                </a>
+            </div>
+            <div class="projeto ativo">
+                <a href="https://jboliveira-pt.github.io/psialinelima/" target="_blank">
+                    <img src="./src/imagens/PsiAlineLima_Screen.png" alt="Psi Aline Lima">
+                    <h3>https://jboliveira-pt.github.io/psialinelima/</h3>
+                    <div class="informacoes-projeto">
+                        <p>Psi Aline Lima's Repository</p>
+                    </div>
+                </a>
+            </div>
+            <div class="projeto ativo">
+                <a href="https://jboliveira-pt.github.io/javascriptgames/" target="_blank">
+                    <img src="./src/imagens/JavaScriptGames_Screen.png" alt="JavaScript Games">
+                    <h3>https://jboliveira-pt.github.io/javascriptgames/</h3>
+                    <div class="informacoes-projeto">
+                        <p>JavaScript Games</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <button class="btn-mostrar-projetos">Show more</button>
+    </section>
+
+    <script src="./src/js/index.js"></script>
+
+    <footer class="footer">
+        <p>&copy; 2025 Developed by <strong>Jeison Oliveira</strong></p>
+    </footer>
+
+</body>
+
+</html>
