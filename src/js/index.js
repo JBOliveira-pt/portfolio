@@ -80,13 +80,16 @@ contactForm.addEventListener("submit", function (e) {
         body: JSON.stringify({ name: name, email: email, message: message }),
     })
         .then(function (res) {
-            if (!res.ok) throw new Error(res.status);
-            contactFeedback.textContent = getFeedbackMsg("success");
-            contactFeedback.className =
-                "text-sm font-label text-center text-primary";
-            contactForm.reset();
+            return res.json().then(function (data) {
+                if (!res.ok) throw new Error(data.error || res.status);
+                contactFeedback.textContent = getFeedbackMsg("success");
+                contactFeedback.className =
+                    "text-sm font-label text-center text-primary";
+                contactForm.reset();
+            });
         })
-        .catch(function () {
+        .catch(function (err) {
+            console.error("Contact form error:", err);
             contactFeedback.textContent = getFeedbackMsg("error");
             contactFeedback.className =
                 "text-sm font-label text-center text-error";
