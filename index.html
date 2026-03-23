@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Jeison Oliveira | Full Stack Developer</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Favicons / Manifest -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Tailwind config -->
+    <script src="./src/js/tailwind.config.js"></script>
+
+    <!-- Prevent FOUC: apply saved theme before first paint -->
+    <script>
+        (function () {
+            if (localStorage.getItem('theme') === 'light') {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+
+    <style>
+        /* ── Light Theme (default) ── */
+        :root {
+            --color-surface-tint: 0 104 116;
+            --color-background: 245 247 247;
+            --color-outline: 111 121 123;
+            --color-error: 186 26 26;
+            --color-primary-container: 0 131 143;
+            --color-inverse-primary: 79 216 235;
+            --color-on-background: 25 28 29;
+            --color-on-error: 255 255 255;
+            --color-on-primary: 255 255 255;
+            --color-on-primary-container: 255 255 255;
+            --color-primary: 0 104 116;
+            --color-surface-variant: 219 228 230;
+            --color-surface-container-highest: 221 224 224;
+            --color-tertiary: 114 92 0;
+            --color-inverse-on-surface: 239 241 241;
+            --color-outline-variant: 191 200 203;
+            --color-secondary: 74 98 103;
+            --color-surface-container-low: 239 241 241;
+            --color-surface-container: 233 235 235;
+            --color-secondary-container: 205 231 236;
+            --color-tertiary-container: 255 224 140;
+            --color-surface-container-high: 227 229 229;
+            --color-on-secondary: 255 255 255;
+            --color-error-container: 255 218 214;
+            --color-on-error-container: 65 0 2;
+            --color-on-surface-variant: 63 72 74;
+            --color-surface: 245 247 247;
+            --color-inverse-surface: 46 49 50;
+            --color-on-secondary-container: 5 31 35;
+            --color-on-tertiary: 255 255 255;
+            --color-surface-bright: 245 247 247;
+            --color-surface-container-lowest: 255 255 255;
+        }
+
+        /* ── Dark Theme ── */
+        .dark {
+            --color-surface-tint: 0 218 243;
+            --color-background: 19 19 19;
+            --color-outline: 132 147 150;
+            --color-error: 255 180 171;
+            --color-primary-container: 0 229 255;
+            --color-inverse-primary: 0 104 117;
+            --color-on-background: 229 226 225;
+            --color-on-error: 105 0 5;
+            --color-on-primary: 0 54 61;
+            --color-on-primary-container: 0 98 110;
+            --color-primary: 195 245 255;
+            --color-surface-variant: 53 53 52;
+            --color-surface-container-highest: 53 53 52;
+            --color-tertiary: 255 234 192;
+            --color-inverse-on-surface: 49 48 48;
+            --color-outline-variant: 59 73 76;
+            --color-secondary: 187 200 208;
+            --color-surface-container-low: 28 27 27;
+            --color-surface-container: 32 31 31;
+            --color-secondary-container: 60 73 79;
+            --color-tertiary-container: 254 201 49;
+            --color-surface-container-high: 42 42 42;
+            --color-on-secondary: 38 50 56;
+            --color-error-container: 147 0 10;
+            --color-on-error-container: 255 218 214;
+            --color-on-surface-variant: 186 201 204;
+            --color-surface: 19 19 19;
+            --color-inverse-surface: 229 226 225;
+            --color-on-secondary-container: 170 183 191;
+            --color-on-tertiary: 62 46 0;
+            --color-surface-bright: 58 57 57;
+            --color-surface-container-lowest: 14 14 14;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgb(var(--color-background));
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(var(--color-outline-variant));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(var(--color-primary-container));
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md shadow-[0_20px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+        <nav class="flex justify-between items-center max-w-7xl mx-auto px-6 md:px-8 h-20">
+            <a class="text-xl font-bold tracking-tighter text-on-background font-headline" href="#about"
+                aria-label="Ir para o topo">
+                Jeison Oliveira
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a class="font-headline text-sm tracking-tight uppercase text-on-background/70 hover:text-on-background transition-colors"
+                    href="#journey" data-i18n="nav.experience">Experience</a>
+                <a class="font-headline text-sm tracking-tight uppercase text-on-background/70 hover:text-on-background transition-colors"
+                    href="#skills" data-i18n="nav.skills">Skills</a>
+                <a class="font-headline text-sm tracking-tight uppercase text-on-background/70 hover:text-on-background transition-colors"
+                    href="#certifications" data-i18n="nav.certifications">Certifications</a>
+                <a class="font-headline text-sm tracking-tight uppercase text-on-background/70 hover:text-on-background transition-colors"
+                    href="#projects" data-i18n="nav.projects">Projects</a>
+                <a class="font-headline text-sm tracking-tight uppercase text-on-background/70 hover:text-on-background transition-colors"
+                    href="#contact" data-i18n="nav.contact">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-3 md:gap-4">
+                <!-- Language Selector -->
+                <div
+                    class="hidden lg:flex items-center gap-1 px-1.5 py-1 bg-surface-container rounded-full border border-outline-variant/20">
+                    <button data-lang="en" type="button"
+                        class="text-[10px] font-bold text-on-primary-container bg-primary-container px-2.5 py-1 rounded-full hover:opacity-90 transition-all cursor-pointer"
+                        aria-label="English">EN</button>
+                    <button data-lang="pt" type="button"
+                        class="text-[10px] text-on-surface-variant bg-transparent px-2.5 py-1 rounded-full hover:bg-surface-container-high transition-all cursor-pointer"
+                        aria-label="Português">PT</button>
+                    <button data-lang="es" type="button"
+                        class="text-[10px] text-on-surface-variant bg-transparent px-2.5 py-1 rounded-full hover:bg-surface-container-high transition-all cursor-pointer"
+                        aria-label="Español">ES</button>
+                </div>
+
+                <button id="theme-toggle" type="button"
+                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 transition-all active:scale-95 duration-200"
+                    aria-label="Alternar tema" title="Alternar tema claro/escuro">
+                    <span class="material-symbols-outlined text-primary text-xl" id="theme-icon">light_mode</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero/About Section -->
+        <section class="pt-32 pb-20 px-6 md:px-8 max-w-7xl mx-auto" id="about">
+            <div class="flex flex-col md:flex-row items-center gap-14 md:gap-16">
+                <div class="w-full md:w-1/2 space-y-8">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container/30 border border-outline-variant/20 rounded-full">
+                        <span class="w-2 h-2 bg-primary-container rounded-full animate-pulse"></span>
+                        <span class="text-xs font-label tracking-widest uppercase text-primary"
+                            data-i18n="hero.badge">Available for Projects</span>
+                    </div>
+
+                    <h1 class="font-headline text-5xl md:text-7xl font-bold leading-tight tracking-tighter">
+                        <span data-i18n="hero.title.pre">From </span><span class="text-primary"
+                            data-i18n="hero.title.highlight">Code of Law</span><span data-i18n="hero.title.post"> to
+                            Code of Software.</span>
+                    </h1>
+
+                    <p class="text-lg text-on-surface-variant max-w-xl leading-relaxed" data-i18n="hero.description">
+                        Portuguese-Brazilian IT professional based in Portugal, transitioning into software
+                        development after nearly a decade as a lawyer in the oil &amp; gas regulatory area.
+                        I build full-stack, cloud-ready web applications, with a strong focus on Java and
+                        modern web development.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                        <a class="bg-primary-container text-on-primary-container px-8 py-4 font-headline font-bold rounded-xl hover:bg-primary transition-all shadow-lg shadow-primary-container/10 text-center"
+                            href="#projects" data-i18n="hero.cta">View My Work</a>
+
+                        <div class="flex items-center gap-6 px-2">
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-default"
+                                title="Backend">terminal</span>
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-default"
+                                title="Database">database</span>
+                            <span
+                                class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-default"
+                                title="Cloud">cloud</span>
+                        </div>
+                    </div>
+
+                    <!-- Social -->
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 transition-colors"
+                            href="https://www.linkedin.com/in/jboliveira-pt/" target="_blank" rel="noreferrer"
+                            aria-label="LinkedIn">
+                            <span class="material-symbols-outlined text-primary">person</span>
+                            <span class="text-sm font-headline">LinkedIn</span>
+                        </a>
+
+                        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 transition-colors"
+                            href="https://github.com/JBOliveira-pt" target="_blank" rel="noreferrer"
+                            aria-label="GitHub">
+                            <span class="material-symbols-outlined text-primary">code</span>
+                            <span class="text-sm font-headline">GitHub</span>
+                        </a>
+
+                        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 transition-colors"
+                            href="https://wa.me/351912306392" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+                            <span class="material-symbols-outlined text-primary">chat</span>
+                            <span class="text-sm font-headline">WhatsApp</span>
+                        </a>
+
+                        <a class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 transition-colors"
+                            href="https://www.instagram.com/jboliveira.pt/" target="_blank" rel="noreferrer"
+                            aria-label="Instagram">
+                            <span class="material-symbols-outlined text-primary">photo_camera</span>
+                            <span class="text-sm font-headline">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 relative group">
+                    <div
+                        class="absolute -inset-4 bg-primary-container/5 rounded-2xl blur-2xl group-hover:bg-primary-container/10 transition-colors">
+                    </div>
+                    <div
+                        class="relative bg-surface-container rounded-2xl overflow-hidden aspect-square border border-outline-variant/20 shadow-2xl">
+                        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            src="./src/imagens/foto.nttdata.png" alt="Foto do portfólio do Jeison" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Journey Section -->
+        <section class="py-24 bg-surface-container-low" id="journey">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/3">
+                        <h2 class="font-headline text-4xl font-bold sticky top-32">
+                            <span data-i18n="journey.title.line1">The Career</span> <br />
+                            <span class="text-primary" data-i18n="journey.title.highlight">Pivot</span>
+                        </h2>
+                    </div>
+
+                    <div class="md:w-2/3 space-y-20 border-l border-outline-variant/20 pl-8 md:pl-16 ml-4 md:ml-0">
+                        <!-- Law Phase -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[41px] md:-left-[73px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-background">
+                            </div>
+                            <span
+                                class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2 block"
+                                data-i18n="journey.law.date">~2014 — 2021</span>
+                            <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="journey.law.title">The
+                                Jurisprudence Era</h3>
+                            <p class="text-on-surface-variant leading-relaxed" data-i18n="journey.law.description">
+                                Practiced law leading regulatory work in oil &amp; gas. That experience sharpened
+                                my analytical thinking, attention to detail, and ability to reason through complex
+                                constraints — skills I now apply to software engineering.
+                            </p>
+                        </div>
+
+                        <!-- Transition Phase -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[41px] md:-left-[73px] top-0 w-4 h-4 rounded-full bg-primary-container border-4 border-background shadow-[0_0_15px_rgba(0,229,255,0.5)]">
+                            </div>
+                            <span class="font-label text-xs tracking-widest uppercase text-primary mb-2 block"
+                                data-i18n="journey.transition.date">2022 — The Shift</span>
+                            <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="journey.transition.title">
+                                Deconstructing Logic</h3>
+                            <p class="text-on-surface-variant leading-relaxed"
+                                data-i18n="journey.transition.description">
+                                Transitioned full-time into software development. Focused on Java, OOP and modern
+                                web development while building full-stack projects and strengthening my cloud
+                                fundamentals.
+                            </p>
+
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
+                                    data-i18n="journey.transition.tag1">Analytical Strategy</span>
+                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
+                                    data-i18n="journey.transition.tag2">Systemic Thinking</span>
+                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
+                                    data-i18n="journey.transition.tag3">Documentation</span>
+                            </div>
+                        </div>
+
+                        <!-- Current Phase -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[41px] md:-left-[73px] top-0 w-4 h-4 rounded-full bg-primary border-4 border-background">
+                            </div>
+                            <span
+                                class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2 block"
+                                data-i18n="journey.current.date">Present</span>
+                            <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="journey.current.title">Full
+                                Stack Developer</h3>
+                            <p class="text-on-surface-variant leading-relaxed" data-i18n="journey.current.description">
+                                Building modern applications with Java/Spring concepts, JavaScript tooling and
+                                cloud-ready deployment patterns. Experience collaborating in Agile environments
+                                (Azure DevOps) and supporting integration/data migration workflows (MuleSoft).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Techs & Tools Section -->
+        <section class="py-24 max-w-7xl mx-auto px-6 md:px-8" id="skills">
+            <div class="text-center mb-16">
+                <h2 class="font-headline text-4xl font-bold" data-i18n="skills.title">Techs & Tools</h2>
+                <p class="text-on-surface-variant mt-4" data-i18n="skills.subtitle">A curated stack built for
+                    performance and scalability.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Backend -->
+                <div
+                    class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-all">
+                    <span class="material-symbols-outlined text-primary mb-6 text-3xl">storage</span>
+                    <h3 class="font-headline font-bold text-lg mb-6" data-i18n="skills.backend">Backend</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.backend.1"> Java / OOP / (Spring Boot fundamentals)</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.backend.2"> Node.js / API basics</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.backend.3"> SQL (MySQL / SQL Server)</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.backend.4"> Integration tooling (MuleSoft)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Frontend -->
+                <div
+                    class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-all">
+                    <span class="material-symbols-outlined text-primary mb-6 text-3xl">desktop_windows</span>
+                    <h3 class="font-headline font-bold text-lg mb-6" data-i18n="skills.frontend">Frontend</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.frontend.1"> HTML / CSS / Responsive UI</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.frontend.2"> JavaScript</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.frontend.3"> React / Next.js (learning + projects)</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.frontend.4"> Tailwind CSS</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure -->
+                <div
+                    class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-all">
+                    <span class="material-symbols-outlined text-primary mb-6 text-3xl">cloud</span>
+                    <h3 class="font-headline font-bold text-lg mb-6" data-i18n="skills.infra">Infrastructure</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.infra.1"> Azure Fundamentals</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.infra.2"> Vercel deployments</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.infra.3"> Cloud concepts (Google CDL)</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.infra.4"> Serverless DB (Neon)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tools -->
+                <div
+                    class="bg-surface-container p-8 rounded-2xl border border-outline-variant/10 hover:border-primary-container/30 transition-all">
+                    <span class="material-symbols-outlined text-primary mb-6 text-3xl">architecture</span>
+                    <h3 class="font-headline font-bold text-lg mb-6" data-i18n="skills.tools">Tools</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.tools.1"> Git / GitHub</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.tools.2"> IntelliJ / VS Code</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.tools.3"> Postman / API testing</span>
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-on-surface-variant">
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span><span
+                                data-i18n="skills.tools.4"> Agile (Azure DevOps)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="py-24 bg-surface-container-lowest" id="certifications">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                    <div>
+                        <h2 class="font-headline text-4xl font-bold" data-i18n="certs.title">Certifications</h2>
+                        <p class="text-on-surface-variant mt-2" data-i18n="certs.subtitle">Continuous evolution through
+                            formal validation.</p>
+                    </div>
+
+                    <!-- Setas (visual) -->
+                    <div class="flex gap-4">
+                        <button
+                            class="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 hover:border-primary transition-colors"
+                            type="button" aria-label="Anterior" title="Demo">
+                            <span class="material-symbols-outlined">arrow_back</span>
+                        </button>
+                        <button
+                            class="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 hover:border-primary transition-colors"
+                            type="button" aria-label="Próximo" title="Demo">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- ISCTE -->
+                    <div
+                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group">
+                        <div
+                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest">
+                            <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                data-weight="fill">verified</span>
+                            <h4 class="font-headline font-bold text-xl" data-i18n="certs.iscte.name">ISCTE</h4>
+                            <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.iscte.desc">Java
+                                Programming</p>
+
+                            <div class="mt-6 rounded-xl overflow-hidden border border-outline-variant/10">
+                                <img src="src/imagens/iscte-img.png" alt="Certificação Java Programming"
+                                    class="w-full h-40 object-cover opacity-90" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Microsoft AZ-900 -->
+                    <div
+                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group">
+                        <div
+                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest">
+                            <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                data-weight="fill">cloud</span>
+                            <h4 class="font-headline font-bold text-xl" data-i18n="certs.az900.name">Microsoft Certified
+                            </h4>
+                            <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.az900.desc">Azure
+                                Fundamentals (AZ-900)</p>
+
+                            <div class="mt-6 rounded-xl overflow-hidden border border-outline-variant/10">
+                                <img src="src/imagens/az900-img.png" alt="Certificação Azure Fundamentals AZ-900"
+                                    class="w-full h-40 object-cover opacity-90" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Digital Leader -->
+                    <div
+                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group">
+                        <div
+                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest">
+                            <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                data-weight="fill">workspace_premium</span>
+                            <h4 class="font-headline font-bold text-xl" data-i18n="certs.google.name">Google</h4>
+                            <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.google.desc">Cloud Digital
+                                Leader</p>
+
+                            <div class="mt-6 rounded-xl overflow-hidden border border-outline-variant/10">
+                                <img src="src/imagens/digitalleader-img.png"
+                                    alt="Certificação Google Cloud Digital Leader"
+                                    class="w-full h-40 object-cover opacity-90" loading="lazy" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Works Section -->
+        <section class="py-24 max-w-7xl mx-auto px-6 md:px-8" id="projects">
+            <h2 class="font-headline text-4xl font-bold mb-16 text-center">
+                <span data-i18n="projects.title.pre">Selected </span><span class="text-primary"
+                    data-i18n="projects.title.highlight">Works</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+                <!-- Project 1 (Large) -->
+                <div
+                    class="md:col-span-8 md:row-span-2 bg-surface-container-low rounded-3xl overflow-hidden relative group">
+                    <img class="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-700"
+                        src="./src/imagens/PrimeFLOW_Screen.png" alt="PrimeFLOW screenshot" loading="lazy" />
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent p-10 md:p-12 flex flex-col justify-end">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span
+                                class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded uppercase tracking-wider">Landing</span>
+                            <span
+                                class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded uppercase tracking-wider">Vercel</span>
+                        </div>
+
+                        <h3 class="text-3xl font-headline font-bold text-on-background mb-4"
+                            data-i18n="projects.prime.title">PrimeFLOW</h3>
+                        <p class="text-on-surface-variant max-w-md mb-6" data-i18n="projects.prime.desc">
+                            Landing page project deployed on Vercel. Focused on clean UI and modern presentation.
+                        </p>
+
+                        <a class="flex items-center gap-2 text-primary font-bold group"
+                            href="https://primeflow-landing.vercel.app/" target="_blank" rel="noreferrer">
+                            <span data-i18n="projects.prime.cta">Explore Project</span>
+                            <span
+                                class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <a class="md:col-span-4 md:row-span-1 bg-surface-container-low rounded-3xl overflow-hidden relative group block"
+                    href="https://jboliveira-pt.github.io/sinc/" target="_blank" rel="noreferrer"
+                    aria-label="Abrir projeto S.Inc">
+                    <img class="w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-transform duration-700"
+                        src="./src/imagens/S.Inc-Demo_Screen.png" alt="S.Inc MVP screenshot" loading="lazy" />
+                    <div
+                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background/90 via-background/20 to-transparent">
+                        <h3 class="text-xl font-headline font-bold text-on-background mb-2"
+                            data-i18n="projects.sinc.title">S.Inc MVP</h3>
+                        <p class="text-sm text-on-surface-variant mb-4" data-i18n="projects.sinc.desc">Demo/MVP hosted
+                            on GitHub Pages.</p>
+                        <span class="text-primary material-symbols-outlined">launch</span>
+                    </div>
+                </a>
+
+                <!-- Project 3 -->
+                <a class="md:col-span-4 md:row-span-1 bg-surface-container-low rounded-3xl overflow-hidden relative group block"
+                    href="https://jboliveira-pt.github.io/psialinelima/" target="_blank" rel="noreferrer"
+                    aria-label="Abrir projeto Psi Aline Lima">
+                    <img class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
+                        src="./src/imagens/PsiAlineLima_Screen.png" alt="Psi Aline Lima screenshot" loading="lazy" />
+                    <div
+                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background/90 via-background/20 to-transparent">
+                        <h3 class="text-xl font-headline font-bold text-on-background mb-2"
+                            data-i18n="projects.psi.title">Psi Aline Lima</h3>
+                        <p class="text-sm text-on-surface-variant mb-4" data-i18n="projects.psi.desc">Website project
+                            hosted on GitHub Pages.</p>
+                        <span class="text-primary material-symbols-outlined">launch</span>
+                    </div>
+                </a>
+
+                <!-- Project 4 (extra row on md, to match your existing list better) -->
+                <a class="md:col-span-4 md:row-span-1 bg-surface-container-low rounded-3xl overflow-hidden relative group block"
+                    href="https://jboliveira-pt.github.io/javascriptgames/" target="_blank" rel="noreferrer"
+                    aria-label="Abrir projeto JavaScript Games">
+                    <img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                        src="./src/imagens/JavaScriptGames_Screen.png" alt="JavaScript Games screenshot"
+                        loading="lazy" />
+                    <div
+                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background/90 via-background/20 to-transparent">
+                        <h3 class="text-xl font-headline font-bold text-on-background mb-2"
+                            data-i18n="projects.games.title">JavaScript Games</h3>
+                        <p class="text-sm text-on-surface-variant mb-4" data-i18n="projects.games.desc">Small games &
+                            experiments with JS.</p>
+                        <span class="text-primary material-symbols-outlined">launch</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-24 bg-surface-container-low" id="contact">
+            <div class="max-w-7xl mx-auto px-6 md:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="font-headline text-5xl font-bold mb-6">
+                            <span data-i18n="contact.title.line1">Initiate</span> <br />
+                            <span class="text-primary" data-i18n="contact.title.highlight">Transmission</span>
+                        </h2>
+
+                        <p class="text-on-surface-variant text-lg leading-relaxed mb-10"
+                            data-i18n="contact.description">
+                            Whether you're looking to build a modern web application or need a technical partner
+                            with strong analytical background, feel free to reach out.
+                        </p>
+
+                        <div class="space-y-6">
+                            <a class="flex items-center gap-6 group" href="mailto:jeisonbr.pt@outlook.pt"
+                                aria-label="Enviar email">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-all">
+                                    <span class="material-symbols-outlined">alternate_email</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase font-label tracking-widest text-on-surface-variant"
+                                        data-i18n="contact.email.label">Email</p>
+                                    <p class="text-xl font-headline font-bold">jeisonbr.pt@outlook.pt</p>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined">location_on</span>
+                                </div>
+                                <div>
+                                    <p class="text-xs uppercase font-label tracking-widest text-on-surface-variant"
+                                        data-i18n="contact.location.label">Current Orbit</p>
+                                    <p class="text-xl font-headline font-bold" data-i18n="contact.location.value">
+                                        Portugal</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-surface-container p-8 md:p-12 rounded-3xl border border-outline-variant/10 shadow-2xl">
+                        <form id="contact-form" class="space-y-6">
+                            <div class="space-y-2">
+                                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                                    data-i18n="contact.form.name.label">Sender Identity</label>
+                                <input
+                                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-6 py-4 focus:ring-2 focus:ring-primary-container focus:border-transparent outline-none transition-all placeholder:text-outline-variant"
+                                    placeholder="Your name" data-i18n-placeholder="contact.form.name.placeholder"
+                                    type="text" name="name" autocomplete="name" />
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                                    data-i18n="contact.form.email.label">Return Path</label>
+                                <input
+                                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-6 py-4 focus:ring-2 focus:ring-primary-container focus:border-transparent outline-none transition-all placeholder:text-outline-variant"
+                                    placeholder="email@example.com"
+                                    data-i18n-placeholder="contact.form.email.placeholder" type="email" name="email"
+                                    autocomplete="email" />
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-xs font-label uppercase tracking-widest text-on-surface-variant"
+                                    data-i18n="contact.form.message.label">Message Payload</label>
+                                <textarea
+                                    class="w-full bg-surface-container-low border border-outline-variant/30 rounded-xl px-6 py-4 focus:ring-2 focus:ring-primary-container focus:border-transparent outline-none transition-all placeholder:text-outline-variant"
+                                    placeholder="Briefly describe your project..."
+                                    data-i18n-placeholder="contact.form.message.placeholder" rows="4"
+                                    name="message"></textarea>
+                            </div>
+
+                            <button
+                                class="w-full bg-primary-container text-on-primary-container font-headline font-bold py-5 rounded-xl hover:bg-primary hover:shadow-lg hover:shadow-primary/20 active:scale-95 transition-all"
+                                type="submit" id="contact-submit" data-i18n="contact.form.submit">
+                                Execute Transmission
+                            </button>
+
+                            <p id="contact-feedback" class="text-sm font-label text-center hidden"></p>
+
+                            <p class="text-xs text-on-surface-variant leading-relaxed text-center"
+                                data-i18n="contact.form.disclaimer">
+                                Your message will be sent directly to my inbox.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest w-full py-12 border-t border-outline-variant/20">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-8 max-w-7xl mx-auto gap-6">
+            <p class="font-body text-xs uppercase tracking-widest text-on-surface-variant" data-i18n="footer.copy">
+                © 2026 Jeison Oliveira. Built with Precision.
+            </p>
+
+            <div class="flex gap-8">
+                <a class="font-body text-xs uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-transform hover:-translate-y-1"
+                    href="https://github.com/JBOliveira-pt" target="_blank" rel="noreferrer">GitHub</a>
+                <a class="font-body text-xs uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-transform hover:-translate-y-1"
+                    href="https://www.linkedin.com/in/jboliveira-pt/" target="_blank" rel="noreferrer">LinkedIn</a>
+                <a class="font-body text-xs uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-transform hover:-translate-y-1"
+                    href="https://www.instagram.com/jboliveira.pt/" target="_blank" rel="noreferrer">Instagram</a>
+                <a class="font-body text-xs uppercase tracking-widest text-on-surface-variant hover:text-on-background transition-transform hover:-translate-y-1"
+                    href="https://wa.me/351912306392" target="_blank" rel="noreferrer">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Mobile Nav -->
+    <nav class="md:hidden fixed bottom-0 w-full bg-surface-container/90 backdrop-blur-lg border-t border-outline-variant/20 z-[60] px-4 py-3 flex justify-around items-center"
+        aria-label="Mobile navigation">
+        <a class="flex flex-col items-center gap-1 text-primary" href="#about">
+            <span class="material-symbols-outlined" data-weight="fill">person</span>
+            <span class="text-[10px] uppercase font-label" data-i18n="mobile.about">About</span>
+        </a>
+
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#skills">
+            <span class="material-symbols-outlined">code</span>
+            <span class="text-[10px] uppercase font-label" data-i18n="mobile.skills">Skills</span>
+        </a>
+
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#projects">
+            <span class="material-symbols-outlined">terminal</span>
+            <span class="text-[10px] uppercase font-label" data-i18n="mobile.work">Work</span>
+        </a>
+
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#contact">
+            <span class="material-symbols-outlined">mail</span>
+            <span class="text-[10px] uppercase font-label" data-i18n="mobile.contact">Contact</span>
+        </a>
+    </nav>
+
+    <script src="./src/js/i18n.js"></script>
+    <script src="./src/js/index.js"></script>
+</body>
+
+</html>
