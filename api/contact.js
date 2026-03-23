@@ -33,7 +33,7 @@ export default async function handler(req, res) {
 
     // ── Insert into Neon ──
     try {
-        var sql = neon(process.env.DATABASE_URL);
+        var sql = neon(process.env.portfolio_DATABASE_URL);
 
         await sql`
             INSERT INTO contact_messages (name, email, message)
