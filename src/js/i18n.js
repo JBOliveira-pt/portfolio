@@ -9,7 +9,7 @@ var translations = {
 
         // Hero
         "hero.badge": "Available for Projects",
-        "hero.title.pre": "From.  JB  .",
+        "hero.title.pre": "From ",
         "hero.title.highlight": "Code of Law",
         "hero.title.post": " to Code of Software",
         "hero.description":
