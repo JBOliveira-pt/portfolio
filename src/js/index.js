@@ -24,13 +24,60 @@ themeToggle.addEventListener("click", function () {
 
 // ── Language Switcher ──
 var savedLang = localStorage.getItem("lang") || "en";
+var langOrder = ["en", "pt", "es"];
+var mobileLangToggle = document.getElementById("mobile-lang-toggle");
+var mobileLangLabel = document.getElementById("mobile-lang-label");
+
+function updateMobileLangLabel(lang) {
+    mobileLangLabel.textContent = lang.toUpperCase();
+}
+
 applyLanguage(savedLang);
+updateMobileLangLabel(savedLang);
 
 document.querySelectorAll("[data-lang]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-        applyLanguage(btn.getAttribute("data-lang"));
+        var lang = btn.getAttribute("data-lang");
+        applyLanguage(lang);
+        updateMobileLangLabel(lang);
     });
 });
+
+mobileLangToggle.addEventListener("click", function () {
+    var current = localStorage.getItem("lang") || "en";
+    var idx = langOrder.indexOf(current);
+    var next = langOrder[(idx + 1) % langOrder.length];
+    applyLanguage(next);
+    updateMobileLangLabel(next);
+});
+
+// ── Certifications Carousel ──
+(function () {
+    var track = document.getElementById("certs-track");
+    var prevBtn = document.getElementById("certs-prev");
+    var nextBtn = document.getElementById("certs-next");
+    var currentPage = 0;
+    var totalPages = 2;
+
+    function updateCarousel() {
+        track.style.transform = "translateX(-" + currentPage * 50 + "%)";
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage === totalPages - 1;
+    }
+
+    prevBtn.addEventListener("click", function () {
+        if (currentPage > 0) {
+            currentPage--;
+            updateCarousel();
+        }
+    });
+    nextBtn.addEventListener("click", function () {
+        if (currentPage < totalPages - 1) {
+            currentPage++;
+            updateCarousel();
+        }
+    });
+})();
 
 // ── Contact Form ──
 var contactForm = document.getElementById("contact-form");

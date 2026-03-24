@@ -11,7 +11,7 @@ var translations = {
         "hero.badge": "Available for Projects",
         "hero.title.pre": "From ",
         "hero.title.highlight": "Code of Law",
-        "hero.title.post": " to Code of Software.",
+        "hero.title.post": " to Code of Software",
         "hero.description":
             "Portuguese-Brazilian IT professional based in Portugal, transitioning into software development after nearly a decade as a lawyer in the oil & gas regulatory area. I build full-stack, cloud-ready web applications, with a strong focus on Java and modern web development.",
         "hero.cta": "View My Work",
@@ -19,14 +19,14 @@ var translations = {
         // Journey
         "journey.title.line1": "The Career",
         "journey.title.highlight": "Pivot",
-        "journey.law.date": "~2014 — 2021",
+        "journey.law.date": "2014 — 2024",
         "journey.law.title": "The Jurisprudence Era",
         "journey.law.description":
             "Practiced law leading regulatory work in oil & gas. That experience sharpened my analytical thinking, attention to detail, and ability to reason through complex constraints — skills I now apply to software engineering.",
-        "journey.transition.date": "2022 — The Shift",
+        "journey.transition.date": "2024 — 2025 · The Shift",
         "journey.transition.title": "Deconstructing Logic",
         "journey.transition.description":
-            "Transitioned full-time into software development. Focused on Java, OOP and modern web development while building full-stack projects and strengthening my cloud fundamentals.",
+            "Transitioned full-time into software development. Focused on Java, OOP and modern web development while building full-stack projects and strengthening my cloud fundamentals. Worked for nearly 5 months at NTTData, one of the largest IT consultancies in the world.",
         "journey.transition.tag1": "Analytical Strategy",
         "journey.transition.tag2": "Systemic Thinking",
         "journey.transition.tag3": "Documentation",
@@ -63,6 +63,9 @@ var translations = {
         // Certifications
         "certs.title": "Certifications",
         "certs.subtitle": "Continuous evolution through formal validation.",
+        "certs.cesae.name": "CESAE",
+        "certs.cesae.desc": "Software Developer",
+        "certs.cesae.soon": "COMING SOON",
         "certs.iscte.name": "ISCTE",
         "certs.iscte.desc": "Java Programming",
         "certs.az900.name": "Microsoft Certified",
@@ -108,6 +111,7 @@ var translations = {
         // Mobile nav
         "mobile.about": "About",
         "mobile.skills": "Skills",
+        "mobile.certs": "Certs",
         "mobile.work": "Work",
         "mobile.contact": "Contact",
     },
@@ -120,23 +124,23 @@ var translations = {
         "nav.contact": "Contato",
 
         "hero.badge": "Disponível para Projetos",
-        "hero.title.pre": "Do ",
-        "hero.title.highlight": "Código da Lei",
-        "hero.title.post": " ao Código de Software.",
+        "hero.title.pre": "Dos ",
+        "hero.title.highlight": "Códigos Legais",
+        "hero.title.post": " ao Código de Software",
         "hero.description":
             "Profissional de TI luso-brasileiro baseado em Portugal, em transição para o desenvolvimento de software após quase uma década como advogado na área regulatória de óleo e gás. Construo aplicações web full-stack, cloud-ready, com forte foco em Java e desenvolvimento web moderno.",
         "hero.cta": "Ver Meus Trabalhos",
 
         "journey.title.line1": "A Mudança de",
         "journey.title.highlight": "Carreira",
-        "journey.law.date": "~2014 — 2021",
+        "journey.law.date": "2014 — 2024",
         "journey.law.title": "A Era Jurídica",
         "journey.law.description":
             "Atuei como advogado liderando trabalhos regulatórios em óleo e gás. Essa experiência aprimorou meu pensamento analítico, atenção a detalhes e capacidade de raciocínio em cenários complexos — habilidades que agora aplico à engenharia de software.",
-        "journey.transition.date": "2022 — A Virada",
+        "journey.transition.date": "2024 — 2025 · A Virada",
         "journey.transition.title": "Desconstruindo a Lógica",
         "journey.transition.description":
-            "Transição em tempo integral para o desenvolvimento de software. Foquei em Java, POO e desenvolvimento web moderno, construindo projetos full-stack e fortalecendo meus fundamentos em cloud.",
+            "Transição em tempo integral para o desenvolvimento de software. Foquei em Java, POO e desenvolvimento web moderno, construindo projetos full-stack e fortalecendo meus fundamentos em cloud. Trabalhei por quase 5 meses na NTTData, uma das maiores consultoras de TI do mundo.",
         "journey.transition.tag1": "Estratégia Analítica",
         "journey.transition.tag2": "Pensamento Sistêmico",
         "journey.transition.tag3": "Documentação",
@@ -171,6 +175,9 @@ var translations = {
 
         "certs.title": "Certificações",
         "certs.subtitle": "Evolução contínua através de validação formal.",
+        "certs.cesae.name": "CESAE",
+        "certs.cesae.desc": "Desenvolvedor de Software",
+        "certs.cesae.soon": "EM BREVE",
         "certs.iscte.name": "ISCTE",
         "certs.iscte.desc": "Programação Java",
         "certs.az900.name": "Microsoft Certified",
@@ -213,6 +220,7 @@ var translations = {
 
         "mobile.about": "Sobre",
         "mobile.skills": "Skills",
+        "mobile.certs": "Certs",
         "mobile.work": "Trabalhos",
         "mobile.contact": "Contato",
     },
@@ -227,21 +235,21 @@ var translations = {
         "hero.badge": "Disponible para Proyectos",
         "hero.title.pre": "Del ",
         "hero.title.highlight": "Código de la Ley",
-        "hero.title.post": " al Código de Software.",
+        "hero.title.post": " al Código de Software",
         "hero.description":
             "Profesional de TI luso-brasileño radicado en Portugal, en transición al desarrollo de software tras casi una década como abogado en el área regulatoria de petróleo y gas. Construyo aplicaciones web full-stack, cloud-ready, con fuerte enfoque en Java y desarrollo web moderno.",
         "hero.cta": "Ver Mi Trabajo",
 
         "journey.title.line1": "El Cambio de",
         "journey.title.highlight": "Carrera",
-        "journey.law.date": "~2014 — 2021",
+        "journey.law.date": "2014 — 2024",
         "journey.law.title": "La Era Jurídica",
         "journey.law.description":
             "Ejercí como abogado liderando trabajos regulatorios en petróleo y gas. Esa experiencia agudizó mi pensamiento analítico, atención al detalle y capacidad de razonamiento en escenarios complejos — habilidades que ahora aplico a la ingeniería de software.",
-        "journey.transition.date": "2022 — El Giro",
+        "journey.transition.date": "2024 — 2025 · El Giro",
         "journey.transition.title": "Deconstruyendo la Lógica",
         "journey.transition.description":
-            "Transición a tiempo completo al desarrollo de software. Me enfoqué en Java, POO y desarrollo web moderno, construyendo proyectos full-stack y fortaleciendo mis fundamentos en cloud.",
+            "Transición a tiempo completo al desarrollo de software. Me enfoqué en Java, POO y desarrollo web moderno, construyendo proyectos full-stack y fortaleciendo mis fundamentos en cloud. Trabajé durante casi 5 meses en NTTData, una de las mayores consultoras de TI del mundo.",
         "journey.transition.tag1": "Estrategia Analítica",
         "journey.transition.tag2": "Pensamiento Sistémico",
         "journey.transition.tag3": "Documentación",
@@ -276,6 +284,9 @@ var translations = {
 
         "certs.title": "Certificaciones",
         "certs.subtitle": "Evolución continua a través de validación formal.",
+        "certs.cesae.name": "CESAE",
+        "certs.cesae.desc": "Desarrollador de Software",
+        "certs.cesae.soon": "PRÓXIMAMENTE",
         "certs.iscte.name": "ISCTE",
         "certs.iscte.desc": "Programación Java",
         "certs.az900.name": "Microsoft Certified",
@@ -318,6 +329,7 @@ var translations = {
 
         "mobile.about": "Sobre",
         "mobile.skills": "Skills",
+        "mobile.certs": "Certs",
         "mobile.work": "Trabajos",
         "mobile.contact": "Contacto",
     },

@@ -162,6 +162,11 @@
 
             <div class="flex items-center gap-3 md:gap-4">
                 <!-- Language Selector -->
+                <button id="mobile-lang-toggle" type="button"
+                    class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline-variant/20 transition-all active:scale-95"
+                    aria-label="Trocar idioma">
+                    <span class="text-[10px] font-bold text-primary" id="mobile-lang-label">EN</span>
+                </button>
                 <div
                     class="hidden lg:flex items-center gap-1 px-1.5 py-1 bg-surface-container rounded-full border border-outline-variant/20">
                     <button data-lang="en" type="button"
@@ -262,8 +267,8 @@
                         class="absolute -inset-4 bg-primary-container/5 rounded-2xl blur-2xl group-hover:bg-primary-container/10 transition-colors">
                     </div>
                     <div
-                        class="relative bg-surface-container rounded-2xl overflow-hidden aspect-square border border-outline-variant/20 shadow-2xl">
-                        <img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        class="relative bg-surface-container rounded-2xl overflow-hidden aspect-[4/5] border border-outline-variant/20 shadow-2xl">
+                        <img class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700"
                             src="./src/imagens/foto.nttdata.png" alt="Foto do portfólio do Jeison" />
                     </div>
                 </div>
@@ -282,49 +287,6 @@
                     </div>
 
                     <div class="md:w-2/3 space-y-20 border-l border-outline-variant/20 pl-8 md:pl-16 ml-4 md:ml-0">
-                        <!-- Law Phase -->
-                        <div class="relative">
-                            <div
-                                class="absolute -left-[41px] md:-left-[73px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-background">
-                            </div>
-                            <span
-                                class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2 block"
-                                data-i18n="journey.law.date">~2014 — 2021</span>
-                            <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="journey.law.title">The
-                                Jurisprudence Era</h3>
-                            <p class="text-on-surface-variant leading-relaxed" data-i18n="journey.law.description">
-                                Practiced law leading regulatory work in oil &amp; gas. That experience sharpened
-                                my analytical thinking, attention to detail, and ability to reason through complex
-                                constraints — skills I now apply to software engineering.
-                            </p>
-                        </div>
-
-                        <!-- Transition Phase -->
-                        <div class="relative">
-                            <div
-                                class="absolute -left-[41px] md:-left-[73px] top-0 w-4 h-4 rounded-full bg-primary-container border-4 border-background shadow-[0_0_15px_rgba(0,229,255,0.5)]">
-                            </div>
-                            <span class="font-label text-xs tracking-widest uppercase text-primary mb-2 block"
-                                data-i18n="journey.transition.date">2022 — The Shift</span>
-                            <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="journey.transition.title">
-                                Deconstructing Logic</h3>
-                            <p class="text-on-surface-variant leading-relaxed"
-                                data-i18n="journey.transition.description">
-                                Transitioned full-time into software development. Focused on Java, OOP and modern
-                                web development while building full-stack projects and strengthening my cloud
-                                fundamentals.
-                            </p>
-
-                            <div class="mt-6 flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
-                                    data-i18n="journey.transition.tag1">Analytical Strategy</span>
-                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
-                                    data-i18n="journey.transition.tag2">Systemic Thinking</span>
-                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
-                                    data-i18n="journey.transition.tag3">Documentation</span>
-                            </div>
-                        </div>
-
                         <!-- Current Phase -->
                         <div class="relative">
                             <div
@@ -339,6 +301,50 @@
                                 Building modern applications with Java/Spring concepts, JavaScript tooling and
                                 cloud-ready deployment patterns. Experience collaborating in Agile environments
                                 (Azure DevOps) and supporting integration/data migration workflows (MuleSoft).
+                            </p>
+                        </div>
+
+                        <!-- Transition Phase -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[41px] md:-left-[73px] top-0 w-4 h-4 rounded-full bg-primary-container border-4 border-background shadow-[0_0_15px_rgba(0,229,255,0.5)]">
+                            </div>
+                            <span class="font-label text-xs tracking-widest uppercase text-primary mb-2 block"
+                                data-i18n="journey.transition.date">2024 — 2025 · The Shift</span>
+                            <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="journey.transition.title">
+                                Deconstructing Logic</h3>
+                            <p class="text-on-surface-variant leading-relaxed"
+                                data-i18n="journey.transition.description">
+                                Transitioned full-time into software development. Focused on Java, OOP and modern
+                                web development while building full-stack projects and strengthening my cloud
+                                fundamentals. Worked for nearly 5 months at NTTData, one of the largest IT consultancies
+                                in the world.
+                            </p>
+
+                            <div class="mt-6 flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
+                                    data-i18n="journey.transition.tag1">Analytical Strategy</span>
+                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
+                                    data-i18n="journey.transition.tag2">Systemic Thinking</span>
+                                <span class="px-3 py-1 bg-surface-container-highest text-xs font-label rounded"
+                                    data-i18n="journey.transition.tag3">Documentation</span>
+                            </div>
+                        </div>
+
+                        <!-- Law Phase -->
+                        <div class="relative">
+                            <div
+                                class="absolute -left-[41px] md:-left-[73px] top-0 w-4 h-4 rounded-full bg-outline-variant border-4 border-background">
+                            </div>
+                            <span
+                                class="font-label text-xs tracking-widest uppercase text-on-surface-variant mb-2 block"
+                                data-i18n="journey.law.date">2014 — 2024</span>
+                            <h3 class="text-2xl font-headline font-bold mb-4" data-i18n="journey.law.title">The
+                                Jurisprudence Era</h3>
+                            <p class="text-on-surface-variant leading-relaxed" data-i18n="journey.law.description">
+                                Practiced law leading regulatory work in oil &amp; gas. That experience sharpened
+                                my analytical thinking, attention to detail, and ability to reason through complex
+                                constraints — skills I now apply to software engineering.
                             </p>
                         </div>
                     </div>
@@ -460,83 +466,203 @@
         <!-- Certifications Section -->
         <section class="py-24 bg-surface-container-lowest" id="certifications">
             <div class="max-w-7xl mx-auto px-6 md:px-8">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-                    <div>
+                <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-16 gap-8">
+                    <div class="text-center md:text-left">
                         <h2 class="font-headline text-4xl font-bold" data-i18n="certs.title">Certifications</h2>
                         <p class="text-on-surface-variant mt-2" data-i18n="certs.subtitle">Continuous evolution through
                             formal validation.</p>
                     </div>
 
                     <!-- Setas (visual) -->
-                    <div class="flex gap-4">
-                        <button
-                            class="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 hover:border-primary transition-colors"
-                            type="button" aria-label="Anterior" title="Demo">
+                    <div class="hidden md:flex gap-4">
+                        <button id="certs-prev"
+                            class="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-default"
+                            type="button" aria-label="Anterior" disabled>
                             <span class="material-symbols-outlined">arrow_back</span>
                         </button>
-                        <button
-                            class="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 hover:border-primary transition-colors"
-                            type="button" aria-label="Próximo" title="Demo">
+                        <button id="certs-next"
+                            class="w-12 h-12 flex items-center justify-center rounded-full border border-outline-variant/30 hover:border-primary transition-colors disabled:opacity-30 disabled:cursor-default"
+                            type="button" aria-label="Próximo">
                             <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Mobile: all cards, no carousel -->
+                <div class="grid grid-cols-1 gap-8 md:hidden">
+                    <!-- CESAE -->
+                    <div
+                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
+                        <div
+                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
+                            <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                data-weight="fill">workspace_premium</span>
+                            <h4 class="font-headline font-bold text-xl" data-i18n="certs.cesae.name">CESAE</h4>
+                            <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.cesae.desc">Software
+                                Developer</p>
+                            <div class="mt-auto pt-6 rounded-xl overflow-hidden relative">
+                                <img src="src/imagens/certificadofake.png" alt="Certificação CESAE Software Developer"
+                                    class="w-full h-45 object-cover opacity-90 blur-sm" loading="lazy" />
+                                <div
+                                    class="absolute inset-0 bg-background/60 flex items-center justify-center rounded-xl">
+                                    <span
+                                        class="font-headline font-bold text-lg tracking-widest uppercase text-on-background"
+                                        data-i18n="certs.cesae.soon">EM BREVE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- ISCTE -->
                     <div
-                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group">
+                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
                         <div
-                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest">
+                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
                             <span class="material-symbols-outlined text-4xl text-primary mb-4"
                                 data-weight="fill">verified</span>
                             <h4 class="font-headline font-bold text-xl" data-i18n="certs.iscte.name">ISCTE</h4>
                             <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.iscte.desc">Java
                                 Programming</p>
-
-                            <div class="mt-6 rounded-xl overflow-hidden border border-outline-variant/10">
+                            <div class="mt-auto pt-6 rounded-xl overflow-hidden">
                                 <img src="src/imagens/iscte-img.png" alt="Certificação Java Programming"
-                                    class="w-full h-40 object-cover opacity-90" loading="lazy" />
+                                    class="w-full h-45 object-cover opacity-90" loading="lazy" />
                             </div>
                         </div>
                     </div>
-
-                    <!-- Microsoft AZ-900 -->
+                    <!-- AZ-900 -->
                     <div
-                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group">
+                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
                         <div
-                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest">
+                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
                             <span class="material-symbols-outlined text-4xl text-primary mb-4"
                                 data-weight="fill">cloud</span>
                             <h4 class="font-headline font-bold text-xl" data-i18n="certs.az900.name">Microsoft Certified
                             </h4>
                             <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.az900.desc">Azure
                                 Fundamentals (AZ-900)</p>
-
-                            <div class="mt-6 rounded-xl overflow-hidden border border-outline-variant/10">
+                            <div class="mt-auto pt-6 rounded-xl overflow-hidden">
                                 <img src="src/imagens/az900-img.png" alt="Certificação Azure Fundamentals AZ-900"
-                                    class="w-full h-40 object-cover opacity-90" loading="lazy" />
+                                    class="w-full h-45 object-cover opacity-90" loading="lazy" />
                             </div>
                         </div>
                     </div>
-
-                    <!-- Google Digital Leader -->
+                    <!-- Google -->
                     <div
-                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group">
+                        class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
                         <div
-                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest">
+                            class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
                             <span class="material-symbols-outlined text-4xl text-primary mb-4"
-                                data-weight="fill">workspace_premium</span>
+                                data-weight="fill">cloud</span>
                             <h4 class="font-headline font-bold text-xl" data-i18n="certs.google.name">Google</h4>
                             <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.google.desc">Cloud Digital
                                 Leader</p>
-
-                            <div class="mt-6 rounded-xl overflow-hidden border border-outline-variant/10">
+                            <div class="mt-auto pt-6 rounded-xl overflow-hidden">
                                 <img src="src/imagens/digitalleader-img.png"
                                     alt="Certificação Google Cloud Digital Leader"
-                                    class="w-full h-40 object-cover opacity-90" loading="lazy" />
+                                    class="w-full h-45 object-cover opacity-90" loading="lazy" />
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Desktop: carousel -->
+                <div class="hidden md:block overflow-hidden">
+                    <div id="certs-track" class="flex transition-transform duration-500 ease-in-out"
+                        style="width: 200%;">
+
+                        <!-- Page 1 -->
+                        <div class="w-1/2 grid grid-cols-1 md:grid-cols-3 gap-8 shrink-0">
+                            <div
+                                class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
+                                <div
+                                    class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
+                                    <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                        data-weight="fill">workspace_premium</span>
+                                    <h4 class="font-headline font-bold text-xl" data-i18n="certs.cesae.name">CESAE</h4>
+                                    <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.cesae.desc">
+                                        Software
+                                        Developer</p>
+
+                                    <div class="mt-auto pt-6 rounded-xl overflow-hidden relative">
+                                        <img src="src/imagens/certificadofake.png"
+                                            alt="Certificação CESAE Software Developer"
+                                            class="w-full h-45 object-cover opacity-90 blur-sm" loading="lazy" />
+                                        <div
+                                            class="absolute inset-0 bg-background/60 flex items-center justify-center rounded-xl">
+                                            <span
+                                                class="font-headline font-bold text-lg tracking-widest uppercase text-on-background"
+                                                data-i18n="certs.cesae.soon">EM BREVE</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ISCTE -->
+                            <div
+                                class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
+                                <div
+                                    class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
+                                    <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                        data-weight="fill">verified</span>
+                                    <h4 class="font-headline font-bold text-xl" data-i18n="certs.iscte.name">ISCTE</h4>
+                                    <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.iscte.desc">Java
+                                        Programming</p>
+
+                                    <div class="mt-auto pt-6 rounded-xl overflow-hidden">
+                                        <img src="src/imagens/iscte-img.png" alt="Certificação Java Programming"
+                                            class="w-full h-45 object-cover opacity-90" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Microsoft AZ-900 -->
+                            <div
+                                class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
+                                <div
+                                    class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
+                                    <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                        data-weight="fill">cloud</span>
+                                    <h4 class="font-headline font-bold text-xl" data-i18n="certs.az900.name">Microsoft
+                                        Certified
+                                    </h4>
+                                    <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.az900.desc">Azure
+                                        Fundamentals (AZ-900)</p>
+
+                                    <div class="mt-auto pt-6 rounded-xl overflow-hidden">
+                                        <img src="src/imagens/az900-img.png"
+                                            alt="Certificação Azure Fundamentals AZ-900"
+                                            class="w-full h-45 object-cover opacity-90" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Page 2 -->
+                        <div class="w-1/2 grid grid-cols-1 md:grid-cols-3 gap-8 shrink-0">
+
+                            <!-- Google Digital Leader -->
+                            <div
+                                class="bg-surface-container p-1 text-center rounded-2xl border border-outline-variant/10 group flex">
+                                <div
+                                    class="bg-surface-container-low p-10 rounded-xl transition-all group-hover:bg-surface-container-highest flex flex-col flex-1">
+                                    <span class="material-symbols-outlined text-4xl text-primary mb-4"
+                                        data-weight="fill">cloud</span>
+                                    <h4 class="font-headline font-bold text-xl" data-i18n="certs.google.name">Google
+                                    </h4>
+                                    <p class="text-sm text-on-surface-variant mt-2" data-i18n="certs.google.desc">Cloud
+                                        Digital
+                                        Leader</p>
+
+                                    <div class="mt-auto pt-6 rounded-xl overflow-hidden">
+                                        <img src="src/imagens/digitalleader-img.png"
+                                            alt="Certificação Google Cloud Digital Leader"
+                                            class="w-full h-45 object-cover opacity-90" loading="lazy" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -553,21 +679,21 @@
                 <!-- Project 1 (Large) -->
                 <div
                     class="md:col-span-8 md:row-span-2 bg-surface-container-low rounded-3xl overflow-hidden relative group">
-                    <img class="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-700"
+                    <img class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                         src="./src/imagens/PrimeFLOW_Screen.png" alt="PrimeFLOW screenshot" loading="lazy" />
 
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent p-10 md:p-12 flex flex-col justify-end">
+                        class="absolute inset-0 bg-gradient-to-t from-background from-20% via-background/30 via-50% to-transparent p-10 md:p-12 flex flex-col justify-end">
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span
-                                class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded uppercase tracking-wider">Landing</span>
+                                class="px-3 py-1 bg-primary-container/90 text-on-primary-container text-[10px] font-bold rounded uppercase tracking-wider backdrop-blur-sm">Landing</span>
                             <span
-                                class="px-3 py-1 bg-primary/10 text-primary text-[10px] font-bold rounded uppercase tracking-wider">Vercel</span>
+                                class="px-3 py-1 bg-primary-container/90 text-on-primary-container text-[10px] font-bold rounded uppercase tracking-wider backdrop-blur-sm">Vercel</span>
                         </div>
 
-                        <h3 class="text-3xl font-headline font-bold text-on-background mb-4"
+                        <h3 class="text-3xl font-headline font-bold text-on-background mb-4 drop-shadow-md"
                             data-i18n="projects.prime.title">PrimeFLOW</h3>
-                        <p class="text-on-surface-variant max-w-md mb-6" data-i18n="projects.prime.desc">
+                        <p class="text-on-surface-variant max-w-md mb-6 drop-shadow-sm" data-i18n="projects.prime.desc">
                             Landing page project deployed on Vercel. Focused on clean UI and modern presentation.
                         </p>
 
@@ -584,10 +710,10 @@
                 <a class="md:col-span-4 md:row-span-1 bg-surface-container-low rounded-3xl overflow-hidden relative group block"
                     href="https://jboliveira-pt.github.io/sinc/" target="_blank" rel="noreferrer"
                     aria-label="Abrir projeto S.Inc">
-                    <img class="w-full h-full object-cover object-top opacity-80 group-hover:scale-105 transition-transform duration-700"
+                    <img class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                         src="./src/imagens/S.Inc-Demo_Screen.png" alt="S.Inc MVP screenshot" loading="lazy" />
                     <div
-                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background/90 via-background/20 to-transparent">
+                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-background/10">
                         <h3 class="text-xl font-headline font-bold text-on-background mb-2"
                             data-i18n="projects.sinc.title">S.Inc MVP</h3>
                         <p class="text-sm text-on-surface-variant mb-4" data-i18n="projects.sinc.desc">Demo/MVP hosted
@@ -600,10 +726,10 @@
                 <a class="md:col-span-4 md:row-span-1 bg-surface-container-low rounded-3xl overflow-hidden relative group block"
                     href="https://jboliveira-pt.github.io/psialinelima/" target="_blank" rel="noreferrer"
                     aria-label="Abrir projeto Psi Aline Lima">
-                    <img class="w-full h-full object-cover opacity-70 group-hover:scale-105 transition-transform duration-700"
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="./src/imagens/PsiAlineLima_Screen.png" alt="Psi Aline Lima screenshot" loading="lazy" />
                     <div
-                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background/90 via-background/20 to-transparent">
+                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-background/10">
                         <h3 class="text-xl font-headline font-bold text-on-background mb-2"
                             data-i18n="projects.psi.title">Psi Aline Lima</h3>
                         <p class="text-sm text-on-surface-variant mb-4" data-i18n="projects.psi.desc">Website project
@@ -616,11 +742,11 @@
                 <a class="md:col-span-4 md:row-span-1 bg-surface-container-low rounded-3xl overflow-hidden relative group block"
                     href="https://jboliveira-pt.github.io/javascriptgames/" target="_blank" rel="noreferrer"
                     aria-label="Abrir projeto JavaScript Games">
-                    <img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                    <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         src="./src/imagens/JavaScriptGames_Screen.png" alt="JavaScript Games screenshot"
                         loading="lazy" />
                     <div
-                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background/90 via-background/20 to-transparent">
+                        class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-background via-background/20 to-background/10">
                         <h3 class="text-xl font-headline font-bold text-on-background mb-2"
                             data-i18n="projects.games.title">JavaScript Games</h3>
                         <p class="text-sm text-on-surface-variant mb-4" data-i18n="projects.games.desc">Small games &
@@ -758,6 +884,11 @@
         <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#skills">
             <span class="material-symbols-outlined">code</span>
             <span class="text-[10px] uppercase font-label" data-i18n="mobile.skills">Skills</span>
+        </a>
+
+        <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#certifications">
+            <span class="material-symbols-outlined">verified</span>
+            <span class="text-[10px] uppercase font-label" data-i18n="mobile.certs">Certs</span>
         </a>
 
         <a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#projects">
