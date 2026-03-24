@@ -9,7 +9,7 @@ var translations = {
 
         // Hero
         "hero.badge": "Available for Projects",
-        "hero.title.pre": "From ",
+        "hero.title.pre": "From.  JB  .",
         "hero.title.highlight": "Code of Law",
         "hero.title.post": " to Code of Software",
         "hero.description":
@@ -79,12 +79,14 @@ var translations = {
         "projects.title.highlight": "Works",
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
-            "Landing page project deployed on Vercel. Focused on clean UI and modern presentation.",
+            "A financial platform developed with TypeScript/Next.js, deployed at Vercel using Neon (DB) and R2 Object Storage.",
         "projects.prime.cta": "Explore Project",
         "projects.sinc.title": "S.Inc MVP",
-        "projects.sinc.desc": "Demo/MVP hosted on GitHub Pages.",
+        "projects.sinc.desc":
+            "Business platform MVP that promotes free social interaction in Java/Spring.",
         "projects.psi.title": "Psi Aline Lima",
-        "projects.psi.desc": "Website project hosted on GitHub Pages.",
+        "projects.psi.desc":
+            "Repository of Instagram posts hosted on GitHub Pages.",
         "projects.games.title": "JavaScript Games",
         "projects.games.desc": "Small games & experiments with JS.",
 
@@ -107,7 +109,7 @@ var translations = {
             "Your message will be sent directly to my inbox.",
 
         // Footer
-        "footer.copy": "© 2026 Jeison Oliveira. Built with Precision.",
+        "footer.copy": "© 2026 Jeison Oliveira",
 
         // Mobile nav
         "mobile.about": "About",
@@ -191,12 +193,14 @@ var translations = {
         "projects.title.highlight": "Selecionados",
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
-            "Projeto de landing page na Vercel. Foco em UI limpa e apresentação moderna.",
+            "Uma plataforma financeira desenvolvida com TypeScript/Next.js, deploys na Vercel, utilizando Neon (BD) e R2 Object Storage.",
         "projects.prime.cta": "Explorar Projeto",
         "projects.sinc.title": "S.Inc MVP",
-        "projects.sinc.desc": "Demo/MVP hospedado no GitHub Pages.",
+        "projects.sinc.desc":
+            "MVP de plataforma empresarial que fomenta a interação social feita em Java/Spring.",
         "projects.psi.title": "Psi Aline Lima",
-        "projects.psi.desc": "Projeto de website hospedado no GitHub Pages.",
+        "projects.psi.desc":
+            "Repositório de publicações do Instagram hospedado no GitHub Pages.",
         "projects.games.title": "JavaScript Games",
         "projects.games.desc": "Pequenos jogos e experimentos com JS.",
 
@@ -218,7 +222,7 @@ var translations = {
         "contact.form.disclaimer":
             "Sua mensagem será enviada diretamente para minha caixa de entrada.",
 
-        "footer.copy": "© 2026 Jeison Oliveira. Construído com Precisão.",
+        "footer.copy": "© 2026 Jeison Oliveira",
 
         "mobile.about": "Sobre",
         "mobile.skills": "Skills",
@@ -301,12 +305,14 @@ var translations = {
         "projects.title.highlight": "Seleccionados",
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
-            "Proyecto de landing page en Vercel. Enfoque en UI limpia y presentación moderna.",
+            "Plataforma financiera desarrollada con TypeScript/Next.js, deploys en Vercel utilizando Neon (BD) y R2 Object Storage.",
         "projects.prime.cta": "Explorar Proyecto",
         "projects.sinc.title": "S.Inc MVP",
-        "projects.sinc.desc": "Demo/MVP alojado en GitHub Pages.",
+        "projects.sinc.desc":
+            "MVP de plataforma empresarial que fomenta la interacción social en Java/Spring.",
         "projects.psi.title": "Psi Aline Lima",
-        "projects.psi.desc": "Proyecto de sitio web alojado en GitHub Pages.",
+        "projects.psi.desc":
+            "Repositorio de publicaciones de Instagram alojado en GitHub Pages.",
         "projects.games.title": "JavaScript Games",
         "projects.games.desc": "Pequeños juegos y experimentos con JS.",
 
@@ -328,7 +334,7 @@ var translations = {
         "contact.form.disclaimer":
             "Tu mensaje será enviado directamente a mi bandeja de entrada.",
 
-        "footer.copy": "© 2026 Jeison Oliveira. Construido con Precisión.",
+        "footer.copy": "© 2026 Jeison Oliveira",
 
         "mobile.about": "Sobre",
         "mobile.skills": "Skills",
