@@ -30,11 +30,10 @@ var translations = {
         "journey.transition.tag1": "Analytical Strategy",
         "journey.transition.tag2": "Systemic Thinking",
         "journey.transition.tag3": "Documentation",
-        "journey.current.date": "Present",
-        "journey.current.title": "Full Stack Developer",
+        "journey.current.date": "2026 · Present",
+        "journey.current.title": "Software Developer",
         "journey.current.description":
-            "Building modern applications with Java/Spring concepts, JavaScript tooling and cloud-ready deployment patterns. Experience collaborating in Agile environments (Azure DevOps) and supporting integration/data migration workflows.",
-
+"Software development integrated with proprietary technology devices from the Petrotec company, a leader in the Iberian Peninsula and 4th in the world, focusing on the Oil & Gas and Renewable Energy industries.",
         // Skills
         "skills.title": "Techs & Tools",
         "skills.subtitle":
@@ -80,7 +79,7 @@ var translations = {
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
             "A financial platform developed with TypeScript/Next.js, deployed at Vercel using Neon (DB) and R2 Object Storage.",
-        "projects.prime.cta": "Explore Project",
+        "projects.first.cta": "Explore Project",
         "projects.sinc.title": "S.Inc MVP",
         "projects.sinc.desc":
             "Business platform MVP that promotes free social interaction in Java/Spring.",
@@ -147,10 +146,10 @@ var translations = {
         "journey.transition.tag1": "Estratégia Analítica",
         "journey.transition.tag2": "Pensamento Sistêmico",
         "journey.transition.tag3": "Documentação",
-        "journey.current.date": "Presente",
-        "journey.current.title": "Desenvolvedor Full Stack",
+        "journey.current.date": "2026 · Presente",
+        "journey.current.title": "Software Developer",
         "journey.current.description":
-            "Construindo aplicações modernas com conceitos Java/Spring, ferramentas JavaScript e padrões de deploy cloud-ready. Experiência colaborando em ambientes Ágeis (Azure DevOps) e apoiando workflows de integração/migração de dados.",
+            "Desenvolvimento de softwares integrados a dispositivos de tecnologia proprietária da empresa Petrotec, líder na península ibérica e 4ª no mundo, com foco nas indústrias de Óleo & Gás e de Energias Renováveis.",
 
         "skills.title": "Tecnologias e Ferramentas",
         "skills.subtitle":
@@ -194,7 +193,7 @@ var translations = {
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
             "Uma plataforma financeira desenvolvida com TypeScript/Next.js, deploys na Vercel, utilizando Neon (BD) e R2 Object Storage.",
-        "projects.prime.cta": "Explorar Projeto",
+        "projects.first.cta": "Explorar Projeto",
         "projects.sinc.title": "S.Inc MVP",
         "projects.sinc.desc":
             "MVP de plataforma empresarial que fomenta a interação social feita em Java/Spring.",
@@ -259,10 +258,10 @@ var translations = {
         "journey.transition.tag1": "Estrategia Analítica",
         "journey.transition.tag2": "Pensamiento Sistémico",
         "journey.transition.tag3": "Documentación",
-        "journey.current.date": "Presente",
-        "journey.current.title": "Desarrollador Full Stack",
+        "journey.current.date": "2026 · Presente",
+        "journey.current.title": "Software Developer",
         "journey.current.description":
-            "Construyendo aplicaciones modernas con conceptos Java/Spring, herramientas JavaScript y patrones de despliegue cloud-ready. Experiencia colaborando en entornos Ágiles (Azure DevOps) y apoyando flujos de integración/migración de datos.",
+            "Desarrollo de software integrado con dispositivos de tecnología propia de la empresa Petrotec, líder en la Península Ibérica y cuarta en el mundo, centrada en los sectores de petróleo y gas y energías renovables.",
 
         "skills.title": "Tecnologías y Herramientas",
         "skills.subtitle":
@@ -306,7 +305,7 @@ var translations = {
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
             "Plataforma financiera desarrollada con TypeScript/Next.js, deploys en Vercel utilizando Neon (BD) y R2 Object Storage.",
-        "projects.prime.cta": "Explorar Proyecto",
+        "projects.first.cta": "Explorar Proyecto",
         "projects.sinc.title": "S.Inc MVP",
         "projects.sinc.desc":
             "MVP de plataforma empresarial que fomenta la interacción social en Java/Spring.",
