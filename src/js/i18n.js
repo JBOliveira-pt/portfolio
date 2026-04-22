@@ -76,16 +76,24 @@ var translations = {
         // Projects
         "projects.title.pre": "Selected ",
         "projects.title.highlight": "Works",
+
+        "projects.team.title": "Team Action",
+        "projects.team.desc":
+            "A sports management platform focused on training, games, statistics, and communication between clubs, coaches, and athletes.",
+        "projects.team.cta": "Explore Project",
+
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
-            "A financial platform developed with TypeScript/Next.js, deployed at Vercel using Neon (DB) and R2 Object Storage.",
-        "projects.first.cta": "Explore Project",
+            "A financial platform developed with TypeScript/Next.js, Vercel, Neon and R2 Cloudflare.",
+       
         "projects.sinc.title": "S.Inc MVP",
         "projects.sinc.desc":
             "Business platform MVP that promotes free social interaction in Java/Spring.",
+
         "projects.psi.title": "Psi Aline Lima",
         "projects.psi.desc":
             "Repository of Instagram posts hosted on GitHub Pages.",
+
         "projects.games.title": "JavaScript Games",
         "projects.games.desc": "Small games & experiments with JS.",
 
@@ -188,20 +196,32 @@ var translations = {
         "certs.google.name": "Google",
         "certs.google.desc": "Cloud Digital Leader",
 
+
+        // Projetos
         "projects.title.pre": "Trabalhos ",
         "projects.title.highlight": "Selecionados",
+
+         "projects.team.title": "Team Action",
+          "projects.team.desc":
+            "Uma plataforma de gestão esportiva focada em treinos, jogos, estatísticas e comunicação entre clubes, treinadores e atletas.",
+        "projects.team.cta": "Explorar Projeto",
+
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
-            "Uma plataforma financeira desenvolvida com TypeScript/Next.js, deploys na Vercel, utilizando Neon (BD) e R2 Object Storage.",
-        "projects.first.cta": "Explorar Projeto",
+            "Uma plataforma financeira desenvolvida com TypeScript/Next.js, Vercel, Neon e R2 Cloudflare.",
+        
         "projects.sinc.title": "S.Inc MVP",
         "projects.sinc.desc":
             "MVP de plataforma empresarial que fomenta a interação social feita em Java/Spring.",
+
         "projects.psi.title": "Psi Aline Lima",
         "projects.psi.desc":
             "Repositório de publicações do Instagram hospedado no GitHub Pages.",
+
         "projects.games.title": "JavaScript Games",
         "projects.games.desc": "Pequenos jogos e experimentos com JS.",
+
+
 
         "contact.title.line1": "Iniciar",
         "contact.title.highlight": "Transmissão",
@@ -300,20 +320,33 @@ var translations = {
         "certs.google.name": "Google",
         "certs.google.desc": "Cloud Digital Leader",
 
+        // Projetcs
+
         "projects.title.pre": "Trabajos ",
         "projects.title.highlight": "Seleccionados",
+
+        "projects.team.title": "Team Action",
+        "projects.team.desc":
+            "Una plataforma de gestión deportiva centrada en entrenamientos, juegos, estadísticas y comunicación entre clubes, entrenadores y atletas.",
+
+        "projects.team.cta": "Explorar Proyecto",
+
         "projects.prime.title": "PrimeFLOW",
         "projects.prime.desc":
-            "Plataforma financiera desarrollada con TypeScript/Next.js, deploys en Vercel utilizando Neon (BD) y R2 Object Storage.",
-        "projects.first.cta": "Explorar Proyecto",
+            "Plataforma financiera desarrollada con TypeScript/Next.js, Vercel, Neon y R2 Cloudflare.",
+
         "projects.sinc.title": "S.Inc MVP",
         "projects.sinc.desc":
             "MVP de plataforma empresarial que fomenta la interacción social en Java/Spring.",
+
         "projects.psi.title": "Psi Aline Lima",
         "projects.psi.desc":
             "Repositorio de publicaciones de Instagram alojado en GitHub Pages.",
+
         "projects.games.title": "JavaScript Games",
         "projects.games.desc": "Pequeños juegos y experimentos con JS.",
+
+
 
         "contact.title.line1": "Iniciar",
         "contact.title.highlight": "Transmisión",
